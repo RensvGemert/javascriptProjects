@@ -1,12 +1,8 @@
-// Practise onclick():
-let count = 0;
-let countEl = document.getElementById("count-element");
+let welcomeEl = document.getElementById("welcome-el");
 
-function increment() {
-    count++;
-    countEl.innerText = count;
-}
+let name = "Rens ";
+let greeting = "Welcome back ";
 
-function save() {
-    console.log(count);
-}
+welcomeEl.innerText = greeting + name;
+
+welcomeEl.innerText += "👋";
