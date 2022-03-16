@@ -28,12 +28,12 @@ button{
     --feedback-form-input: #f4f4f4;
   }
   
-  .center-content, #submit-feedback, .container {
+  .center-content, #submit-feedback, #save-btn, .container {
     display: grid;
     place-content: center;
   }
   
-  #submit-feedback {
+  #submit-feedback, #save-btn {
     padding: 10px 30px;
     font-size: 24px;
     cursor: pointer;
@@ -43,7 +43,7 @@ button{
     color: var(--feedback-primary-color);
     transition: all 0.3s;
   }
-  #submit-feedback:hover {
+  #submit-feedback:hover, #save-btn:hover {
     border-radius: 0px;
     color: var(--feedback-primary-color);
     background-color: var(--background-color);
