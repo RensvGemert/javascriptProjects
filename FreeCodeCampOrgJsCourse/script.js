@@ -1,7 +1,8 @@
 // Practise onclick():
 let count = 0;
+let countEl = document.getElementById("count-element");
 
 function increment() {
     count++;
-    document.getElementById("count-element").innerText = count;
+    countEl.innerText = count;
 }
