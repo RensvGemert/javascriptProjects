@@ -8,13 +8,12 @@ let cardsEl = document.getElementById("cards-el")
 let sumEl = document.getElementById("sum-el");
 
 let player = {
-    name: "Rens",
+    name: "Player",
     cash: 200,
 }
 
-
 let playerEl = document.getElementById("player-el");
-playerEl.textContent = player.name + ": " + player.cash;
+playerEl.textContent = player.name + ": $" + player.cash;
 
 function getRandomCard() {
     let randomNumber = Math.floor(Math.random() * 13) + 1;
@@ -51,12 +50,16 @@ function renderGame() {
     if (sum <= 20) {
         message = "Do you want to draw a new card?";
     } else if (sum === 21) {
-        message = "You've got BlackJack!";
-        // alert(message);
+        message = "Congrats! You've got BlackJack! you won $50";
+        player.cash += 50;
+        playerEl.textContent = player.name + ": $" + player.cash;   
         hasBlackJack = true;
+        alert(message);
     } else {
-        message = "You're out of the game";
+        message = "You're out of the game, you've lost $10";
         isAlive = false;
+        player.cash -= 10;
+        playerEl.textContent = player.name + ": $" + player.cash;
     }
     messageEl.textContent = message;
 }
