@@ -18,5 +18,3 @@ function startGame() {
         isAlive = false;
     }
 }
-
-
