@@ -7,6 +7,8 @@ let messageEl = document.getElementById("message-el");
 let cardsEl = document.getElementById("cards-el")
 let sumEl = document.getElementById("sum-el");
 
+let button = document.getElementById("button-el");
+
 let player = {
     name: "Player",
     cash: 200,
@@ -31,6 +33,7 @@ function getRandomCard() {
 
 function startGame() {
     isAlive = true;
+    hasBlackJack = false;
     let firstCard = getRandomCard();
     let secondCard = getRandomCard();
     cards = [firstCard, secondCard];
@@ -44,22 +47,22 @@ function renderGame() {
     for(let i = 0; i < cards.length; i++){
         cardsEl.textContent += cards[i] + " ";
     }
-    
+
     sumEl.textContent = "Sum: " + sum;
 
     if (sum <= 20) {
         message = "Do you want to draw a new card?";
+        disableStartGameButton();
     } else if (sum === 21) {
-        message = "Congrats! You've got BlackJack! you won $50";
-        player.cash += 50;
-        playerEl.textContent = player.name + ": $" + player.cash;   
+        message = "Congrats! You've got BlackJack! you won $30";
         hasBlackJack = true;
-        alert(message);
+        incrementCash();
+        enableStartGameButton();
     } else {
         message = "You're out of the game, you've lost $10";
         isAlive = false;
-        player.cash -= 10;
-        playerEl.textContent = player.name + ": $" + player.cash;
+        decreaseCash();
+        enableStartGameButton();
     }
     messageEl.textContent = message;
 }
@@ -73,5 +76,22 @@ function newCard() {
     } else {
         message = "You're out of the game";
     }
-   
+}
+
+function incrementCash() {
+    player.cash += 30;
+    playerEl.textContent = player.name + ": $" + player.cash;  
+}
+
+function decreaseCash() {
+    player.cash -= 10;
+    playerEl.textContent = player.name + ": $" + player.cash;
+}
+
+function enableStartGameButton() {
+    button.removeAttribute("disabled", "disabled");
+}
+
+function disableStartGameButton() {
+    button.setAttribute("disabled", "disabled");
 }
