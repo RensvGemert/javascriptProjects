@@ -6,5 +6,10 @@ let messages = [
     "Great!"
 ];
 
-console.log(messages);
+let messageEl = document.getElementById("messages-el");
+
+
+for (let i = 0; i < messages.length; i++) {
+    messageEl.textContent += messages[i] + " ";
+}
 
