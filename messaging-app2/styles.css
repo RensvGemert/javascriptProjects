@@ -131,8 +131,8 @@ body {
 /* Medium and large screens */
 @media all and (min-width: 768px) {
   .chat-thread {
-    width: 50%;
-    height: 320px;
+    width: 70%;
+    height: 920px;
   }
 
   .chat-window {
