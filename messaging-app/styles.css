@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300&family=Poppins:wght@200;400;600&display=swap');
 
 body{
-    background-color: #1e3325;
-    align-items: center;
-    flex-direction: column;
+    background-color: rgb(68, 114, 56);
     font-family: 'Poppins', sans-serif;
     margin-top: 5%;
     display: grid;
@@ -15,9 +13,22 @@ h1 {
     color: rgb(197, 197, 38);
 }
 
-h2, h3, p {
+h2, h3, p{
     text-align: center;
     color: white;
+}
+
+li {
+  color: white;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  font-size: 20px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 #message-el {
